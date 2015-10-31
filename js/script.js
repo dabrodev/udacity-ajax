@@ -12,13 +12,18 @@ function loadData() {
     $nytElem.text("");
 
     // load streetview
-
-    // YOUR CODE GOES HERE!
     var street = $('#street').val();
     var city = $('#city').val();
-    var imgUrl = "https://maps.googleapis.com/maps/api/streetview?size=600x300&location=" + street + "," + city;
+    var address = street + ", " + city;
+
+    $greeting.text("So, you want to live at " + address + "?");
+
+    var imgUrl = 'https://maps.googleapis.com/maps/api/streetview?size=600x300&location=' + address + '';
     $body.append('<img class="bgimg" src="' + imgUrl + '">');
+
     return false;
 }
+
+    // load new york times articles
 
 $('#form-container').submit(loadData);
